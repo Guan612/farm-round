@@ -1,24 +1,23 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png"></image>
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
+  <base :activeTabName="index">
+    <view class="content">
+      <image class="logo" src="/static/logo.png"></image>
+      <view class="text-area">
+        <text class="title">{{ title }}</text>
+      </view>
+      <up-button text="月落"></up-button>
+      <up-button type="primary" shape="circle" text="按钮形状"></up-button>
     </view>
-    <up-button text="月落"></up-button>
-    <up-button type="primary" shape="circle" text="按钮形状"></up-button>
-  </view>
+  </base>
+
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      title: 'Hello',
-    }
-  },
-  onLoad() { },
-  methods: {},
-}
+<script setup>
+import { ref } from 'vue'
+import base from '@/compmnets/base-wrapper/base-wrapper.vue'
+
+const title = ref('Hello')
+
 </script>
 
 <style>

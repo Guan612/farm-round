@@ -1,15 +1,10 @@
-<script>
-export default {
-  onLaunch: function () {
-    console.log('App Launch')
-  },
-  onShow: function () {
-    console.log('App Show')
-  },
-  onHide: function () {
-    console.log('App Hide')
-  },
-}
+<script setup>
+import { onShow } from '@dcloudio/uni-app';
+    onShow(() => {
+        // #ifndef MP-WEIXIN
+        uni.hideTabBar(); // 隐藏原生tabBar
+        // #endif
+    });
 </script>
 
 <style lang="scss">
