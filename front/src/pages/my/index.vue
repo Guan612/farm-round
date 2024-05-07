@@ -1,5 +1,5 @@
 <script setup>
-import gTabBar from '../../compmnets/g-tab-bar/g-tab-bar.vue';
+import gTabBar from '../../compmnets/tabbar/tabbar.vue';
 </script>
 
 <template>
