@@ -20,7 +20,7 @@ let tabbarList = [
   {
     pagePath: "/pages/controller/index",
     text: "设备中心",
-    icon: 'home',
+    icon: 'grid',
     name: 'controller',
   },
   {
