@@ -6,7 +6,7 @@ const imgsrc = ref('https://avatars.githubusercontent.com/u/108745498?v=4');
 
 <template>
     <div class="flex flex-col">
-        <div class="flex flex-row m-2 justify-between items-center bg-gradient-to-r from-sky-500 to-indigo-500 rounded-2xl">
+        <div class="flex flex-row m-2 p-3 justify-between items-center bg-gradient-to-r from-sky-500 to-indigo-500 rounded-2xl">
             <div class="pl-3">
                 <div class="font-extrabold">田皮鸭</div>
                 <div>uid：123456789</div>
