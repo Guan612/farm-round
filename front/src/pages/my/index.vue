@@ -1,7 +1,7 @@
 <script setup>
 import gTabBar from '../../compmnets/tabbar/tabbar.vue';
 import { ref } from 'vue';
-const imgsrc = ref('https://avatars.githubusercontent.com/u/108745498?v=4');
+const imgsrc = ref('https://img2.imgtp.com/2024/04/09/OmWWam4c.jpg');
 </script>
 
 <template>
@@ -16,7 +16,7 @@ const imgsrc = ref('https://avatars.githubusercontent.com/u/108745498?v=4');
                 </div>
             </div>
             <div class="pr-3">
-                <up-avatar :src="imgsrc"></up-avatar>
+                <up-avatar :src="imgsrc" size="60"></up-avatar>
             </div>
         </div>
         <div>
