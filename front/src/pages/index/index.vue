@@ -3,6 +3,8 @@ import { ref } from 'vue'
 import tabbar from "@/compmnets/tabbar/tabbar.vue"
 
 const title = ref('Hello')
+const switchFlag = ref(true)
+const ledFlag = ref(0)
 
 </script>
 
@@ -35,7 +37,7 @@ const title = ref('Hello')
             <img src="../../static/img/light.png" class="bg-auto w-full h-full">
           </div>
           <div class="font-bold">智能灯泡</div>
-          <up-switch v-model="value" @change="change" class="m-2"></up-switch>
+          <up-switch v-model="switchFlag" asyncChange @change="asyncChange" class="m-2"></up-switch>
         </div>
         <div class="m-1 p-2 flex flex-col bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg hover:shadow-2xl">
           <div class="w-20 h-20">
