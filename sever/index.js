@@ -47,6 +47,13 @@ function readSensorData() {
 
 // 服务的回调函数
 function serverCallback(req, res) {
+    //跨域
+    res.writeHead(200, {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*", // 允许所有源访问，根据需求设置实际的访问源
+        "Access-Control-Allow-Methods": "GET,POST",
+        "Access-Control-Allow-Headers": "Content-Type, tenant_id"
+    });
     //使用url 模块对请求地址进行解析
     var URL = url.parse(req.url, true);
     //判断请求是不是post 并且路径名称是不是/led
