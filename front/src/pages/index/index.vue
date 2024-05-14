@@ -1,11 +1,19 @@
 <script setup>
 import { ref } from 'vue'
+import {tooggleLed} from '@/api/main'
 import tabbar from "@/compmnets/tabbar/tabbar.vue"
 
 const title = ref('Hello')
-const switchFlag = ref(true)
+const switchFlag = ref(false)
 const ledFlag = ref(0)
 
+const asyncChange = async()=>{
+  const res = await tooggleLed(ledFlag.value)
+  if(res.code == 200){
+    ledFlag.value = !ledFlag.value
+    switchFlag.value = !switchFlag.value
+  }
+}
 </script>
 
 <template>
