@@ -1,12 +1,15 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { tooggleLed, getTemp } from '@/api/main'
 import tabbar from "@/compmnets/tabbar/tabbar.vue"
 
 const title = ref('Hello')
 const switchFlag = ref(false)
 const ledFlag = ref(0)
-const tempValue = ref()
+const trInfo = ref({
+    "temp": "20",
+    "rh": "60"
+})
 const rhValue = ref()
 
 const asyncChange = async () => {
@@ -19,6 +22,8 @@ const asyncChange = async () => {
 
 const temchange = async () => {
   const res = await getTemp();
+  console.log(res)
+  trInfo.value = res
   
 }
 </script>
@@ -43,9 +48,9 @@ const temchange = async () => {
           <div class="w-20 h-20">
             <img src="../../static/img/temprture.png" class="bg-auto w-full h-full">
           </div>
-          <div class="font-bold">温湿度计</div>
-          <div>温度：20摄氏度</div>
-          <div>湿度：50%</div>
+          <div class="font-bold" @click="temchange">温湿度计</div>
+          <div>温度：{{trInfo.temp}}</div>
+          <div>湿度：{{trInfo.rh}}</div>
         </div>
         <div class="m-1 p-2 flex flex-col bg-gradient-to-r from-sky-500 to-indigo-500 rounded-lg hover:shadow-2xl">
           <div class="w-20 h-20">
