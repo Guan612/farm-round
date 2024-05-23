@@ -9,11 +9,9 @@ const request = ({
 }) => {
     return new Promise((resolve, reject) => {
         if (!headers) {
-            const token = uni.getStorageSync('token');
+            //const token = uni.getStorageSync('token');
             headers = {
-                'Content-Type': 'application/json;charset=utf-8',
-                Authorization: token,
-                TENANT_ID: 1,
+                'Content-Type': 'application/json',
             };
         }
         uni.request({
