@@ -2,18 +2,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Layout from "../views/layout";
 import My from "../views/my";
 import Cneter from "../views/cneter";
-export const router = createBrowserRouter([
+export default createBrowserRouter([
     {
         path: "/",
-        element: Layout,
+        Component: Layout,
         children: [
             {
                 path: "/my",
-                element: My,
+                Component: My,
             },
             {
                 path: "/centre",
-                element: Cneter,
+                Component: Cneter,
             }
         ]
     }

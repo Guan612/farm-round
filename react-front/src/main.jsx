@@ -2,7 +2,7 @@ import React from 'react'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ReactDOM from 'react-dom/client'
 
-import {router} from "./router/index"
+import router from "./router/index"
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
