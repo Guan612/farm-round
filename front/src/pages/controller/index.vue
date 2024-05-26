@@ -33,7 +33,7 @@ const list = ref([
         loading: true
     }
 ]);
-const show = ref(true); 
+const show = ref(false); 
 </script>
 
 <template>
