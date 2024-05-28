@@ -1,13 +1,15 @@
-import { ChatO, AddO, ClockO } from "@react-vant/icons";
-import { useState } from "react";
-import { Switch, Dialog } from "react-vant";
+import { Switch } from "react-vant";
+import  {useLed}  from "../../hooks/home/useLed";
 export default function Home() {
+    const { onChange, led } = useLed();
     return (
         <div className="flex flex-col bg-gray-900 text-white h-screen">
             {/* Title */}
             <div className="m-2">
                 <div className="mb-4">
-                    <h1 className="text-xl font-bold text-center">田皮鸭的家</h1>
+                    <h1 className="text-xl font-bold text-center">
+                        田皮鸭的家
+                    </h1>
                     <div className="flex space-x-2 mt-1">
                         <span className="bg-gray-700 p-1 rounded">全屋</span>
                         <span className="bg-gray-700 p-1 rounded">寝室</span>
@@ -27,15 +29,20 @@ export default function Home() {
                     <div className="bg-gray-800 p-4 rounded flex items-center">
                         <div className="w-12 h-12 bg-gray-600 rounded mr-4"></div>
                         <div>
-                            <div>手机红外遥控器</div>
-                            <div className="text-gray-400">手机 | 设备数4</div>
+                            <div>智能电灯</div>
+                            <div className="">
+                                <Switch checked={led} onChange={onChange} />
+                            </div>
                         </div>
                     </div>
                     <div className="bg-gray-800 p-4 rounded flex items-center">
                         <div className="w-12 h-12 bg-gray-600 rounded mr-4"></div>
                         <div>
-                            <div>牙刷</div>
-                            <div className="text-gray-400">寝室</div>
+                            <div>温湿度传感器</div>
+                            <div className="text-gray-400">
+                                <div>温度：21°</div>
+                                <div>湿度：50%</div>
+                            </div>
                         </div>
                     </div>
                     <div className="bg-gray-800 p-4 rounded flex items-center">
