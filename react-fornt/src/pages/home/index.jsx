@@ -1,7 +1,9 @@
 import { Switch } from "react-vant";
-import  {useLed}  from "../../hooks/home/useLed";
+import { useLed } from "../../hooks/home/useLed";
+import { getTempData } from "../../hooks/home/getTemp";
 export default function Home() {
     const { onChange, led } = useLed();
+    const { tempData, temp, rh } = getTempData();
     return (
         <div className="flex flex-col bg-gray-900 text-white h-screen">
             {/* Title */}
@@ -35,13 +37,13 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                    <div className="bg-gray-800 p-4 rounded flex items-center">
+                    <div className="bg-gray-800 p-4 rounded flex items-center" onClick={tempData}>
                         <div className="w-12 h-12 bg-gray-600 rounded mr-4"></div>
                         <div>
                             <div>温湿度传感器</div>
                             <div className="text-gray-400">
-                                <div>温度：21°</div>
-                                <div>湿度：50%</div>
+                                <div>温度：{temp}°</div>
+                                <div>湿度：{rh}%</div>
                             </div>
                         </div>
                     </div>
