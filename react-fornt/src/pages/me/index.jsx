@@ -46,7 +46,7 @@ export default function Me() {
 
                 {/* 轮播图 */}
                 <div className="mb-4">
-                    <Swiper autoplay={5000}>
+                    <Swiper autoplay={5000} className="rounded-md">
                         {imgs.map((image) => (
                             <Swiper.Item key={image}>
                                 <Image
