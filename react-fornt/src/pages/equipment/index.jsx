@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { Swiper, Image } from "react-vant";
 export default function Equipment() {
     const imgs = [
@@ -17,8 +18,8 @@ export default function Equipment() {
             <div>
                 <h1 className="text-xl font-bold text-center m-2">设备中心</h1>
             </div>
-            <div className="mx-2">
-                <Swiper autoplay={5000}>
+            <div className="mx-2 mb-3">
+                <Swiper autoplay={5000} className="rounded-md">
                     {imgs.map((image) => (
                         <Swiper.Item key={image}>
                             <Image
@@ -31,7 +32,21 @@ export default function Equipment() {
                 </Swiper>
             </div>
             <div>
-                关于设备
+                <NavLink
+                    to={"/addequ"}
+                    className="bg-gray-800 p-4 rounded flex items-center mb-2"
+                >
+                    <div className="w-12 h-12 bg-gray-600 rounded mr-4"></div>
+                    <div>
+                        <div>添加设备</div>
+                    </div>
+                </NavLink>
+                <div className="bg-gray-800 p-4 rounded flex items-center">
+                    <div className="w-12 h-12 bg-gray-600 rounded mr-4"></div>
+                    <div>
+                        <div>耗材更换</div>
+                    </div>
+                </div>
             </div>
         </div>
     );
