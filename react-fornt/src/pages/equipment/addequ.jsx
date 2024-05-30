@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { Button, Input, Form } from "react-vant";
 import { ArrowLeft } from "@react-vant/icons";
 import useIotInfoStore from "../../store/iotipStore";
-import { useEffect } from "react";
 export default function AddEqu() {
     const navigate = useNavigate();
     const { iotInfo, setIotInfo, clearIotInfo } = useIotInfoStore.getState();
@@ -11,9 +10,9 @@ export default function AddEqu() {
     const onFinish = (values) => {
         console.log(values);
         setIotInfo(values);
-        navigate('/addequ', { replace: true });
+        navigate("/addequ", { replace: true });
     };
-    
+
     return (
         <div className="flex flex-col bg-gray-900 text-white h-screen">
             <div className="flex flex-row items-center m-2">
@@ -26,7 +25,7 @@ export default function AddEqu() {
                 <span className="text-xl ml-2">添加设备</span>
             </div>
             <div className="m-2">
-                <Form
+                <Form 
                     form={form}
                     onFinish={onFinish}
                     footer={
@@ -56,17 +55,27 @@ export default function AddEqu() {
                                     </>
                                 )}
                             </div>
+                            {iotInfo.equip ? (
+                                <div className="flex flex-col justify-center items-center mt-2 bg-gray-600 rounded-lg">
+                                    <p>设备信息：</p>
+                                    <p>{iotInfo.equip}</p>
+                                    <p>{iotInfo.equname}</p>
+                                </div>
+                                
+                            ) : (
+                                <p className="flex flex-col justify-center items-center mt-2 bg-gray-600 rounded-lg">还没有设备信息哦</p>
+                            )}
                         </div>
                     }
                 >
-                    <Form.Item
+                    <Form.Item className="rounded-lg mb-2"
                         rules={[{ required: true, message: "请填写设备名" }]}
                         name="equname"
                         label="设备名"
                     >
                         <Input placeholder="请输入设备ip" />
                     </Form.Item>
-                    <Form.Item
+                    <Form.Item className="rounded-lg"
                         tooltip={{
                             message: "可以通过路由器查看如‘192.168.2.13’",
                         }}
