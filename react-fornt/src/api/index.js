@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const http = axios.create({
-    baseURL: 'http://localhost:8000',
-    timeout: 5000
+    baseURL: 'http://192.168.2.170',
+    timeout: 10000
 })
 
 export default http;
